@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Khushi ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 100px;
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+        .reveal-button {
+            background: #ffcc00;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+        .reveal-button:hover {
+            background: #ff9900;
+        }
+        .next-button {
+            background: #ff6699;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            display: none;
+        }
+        .next-button:hover {
+            background: #ff3366;
+        }
+        .heart {
+            font-size: 30px;
+            animation: heartbeat 1s infinite;
+            color: red;
+            margin-top: 20px;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <button class="reveal-button" onclick="showMessage()">Click here, Khushi ❤️</button>
+    <div class="container" id="messageBox">
+        <h1>Happy Birthday Khushi ❤️</h1>
+        <p id="message"></p>
+        <button class="next-button" onclick="nextMessage()" id="nextButton">Want to see another message? 🎁</button>
+        <p class="heart">❤️❤️❤️</p>
+    </div>
+    <script>
+        const messages = [
+            "My love, today is the day the world was blessed with an angel—YOU! 🎂🎉",
+            "We've spent 7 beautiful years together, even though distance separates us, my heart is always with you.",
+            "From our school days to today, you've been my happiness, my best friend, my love. Every moment with you is precious.",
+            "Though we’ve only met 8 times, my love for you grows stronger every day. ❤️",
+            "Wishing you endless happiness, success, and love. You are my forever. 💖",
+            "Roses are red, violets are blue,\nNo one in this world is as special as you.\nYour laughter, your smile, your beautiful grace,\nYou make my world a happier place. 💕"
+        ];
+        let messageIndex = 0;
+
+        function showMessage() {
+            document.querySelector('.reveal-button').style.display = 'none';
+            document.getElementById('messageBox').style.display = 'inline-block';
+            document.getElementById('message').innerText = messages[messageIndex];
+            document.getElementById('nextButton').style.display = 'block';
+        }
+
+        function nextMessage() {
+            messageIndex++;
+            if (messageIndex < messages.length) {
+                document.getElementById('message').innerText = messages[messageIndex];
+            } else {
+                document.getElementById('message').innerText = "That's all my love, but my heart has endless words for you ❤️";
+                document.getElementById('nextButton').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
